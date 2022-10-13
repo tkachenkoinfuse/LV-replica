@@ -1,0 +1,16 @@
+﻿namespace ServiceWithHangfire
+{
+    public static class Constant
+    {
+        // connection to DB with configs
+        public const string connectionStringReplicaDB = "Server=host;Port=3306;Database=app_lv;User ID=user;Pwd=pass;charset=utf8;SslMode=none;convert zero datetime=True;Command Timeout=300;";
+
+        public const string connectionStringTargetDB = "Server=host;Port=3306;Database=lvdb_replica;User ID=user;Pwd=pass;charset=utf8mb4;SslMode=none;default command timeout=300; convert zero datetime=True";
+
+        // connection to hangfire DB 
+        public const string connectionStringHangfire = "server=host;uid=user;pwd=pass;database=lvdb_replica;Allow User Variables=True;SslMode=none;default command timeout=120;";
+
+        public const string serviceName = "LV replica backup";
+        public const string hangfireDashboardUrl = "/HFdashboard/LVReplicaSave";
+    }
+}
